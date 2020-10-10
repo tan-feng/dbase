@@ -1,9 +1,9 @@
 
 This is a simple wrapper of libsqlite3 in C, which features:
 1. Object-oriented design, all calling variables are contained in one single context structure, no aditional declarations are needed;
-2. Light yet complete capsulation, all-in-one single file, no memory allocation, and no refering to symbols in sqlite3.h is needed;
+2. Light yet complete capsulation, all-in-one single file, no memory allocation, and no knowlege to sqlite3.h is needed;
 3. Getters/setters of columns/parameters by names instead of by indices, helpful to reduce errors and to write more human-readable elegant code; 
-4. Support of both the legacy single-step queries and the new precompiled multi-step queries;
+4. Support of both the legacy single-step queries and the new precompiled multi-step ones;
 5. Builtin debug capability with ez_debug (a runtime debug printing wrapper of printf, see my other project)
 
 
@@ -44,9 +44,9 @@ The following is a full demonstration:
 	/* SEELCT */
         //the OLD whole fetch mode, fully navigatible but resource comsuming, DEPRECATED 
         db_get_table(db, "SELECT * FROM students WHERE age > %d ORDER by weight", 10);
-	db_seek(db, 3);  //the 3rd row
+	db_seek(db, 3);  //goto the 3rd row
         printf("[%d] name=%s age=%d\n", db->i, db_col_str(db, "name"), db_col_int(db, "age")); 
-	db_seek(db, -2);  //the 2nd last row
+	db_seek(db, -2);  //goto the 2nd last row
 
         ///
 	db_free(db);
