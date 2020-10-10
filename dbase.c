@@ -1,5 +1,5 @@
 /* @file dbase.h
- * @brief A simple wrapper of squlite3 APIs
+ * @brief A simple wrapper of libsqlite3 APIs
  * @date 2020-08-22 <Tan Feng> Created
  * @date 2020-09-15 <Tan Feng> Added support of precompiled procedures
  */
